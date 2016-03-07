@@ -6,6 +6,7 @@ import play.api.mvc._
 
 class DjController extends Controller {
 
+  import model.SongJsonProtocol._
 
   def play = Action {
     val song = Song(1,"We are the champions",10)
