@@ -5,5 +5,10 @@
 # Home page
 GET     /                           controllers.Application.index
 
+POST     /vote                           controllers.DjController.vote
+POST     /play                           controllers.DjController.play
+GET     /songs                           controllers.DjController.songs
+
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
