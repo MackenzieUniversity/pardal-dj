@@ -9,18 +9,17 @@ class DjController extends Controller {
   import model.SongJsonProtocol._
 
   def play = Action {
-    val song = Song(1,"We are the champions",10)
+    val song = Song.next()
     Ok(Json.toJson(song).toString)
   }
 
   def songs = Action {
-    val songs = List(Song(1,"We are the champions",15),
-      Song(2,"Bohemian Rapsody",10),
-      Song(3,"Supervisor",9))
+    val songs = Song.findAll
     Ok(Json.toJson(songs).toString)
   }
 
-  def vote = Action {
+  def vote(id: Long) = Action {
+    Song.vote(id)
     Ok(
       """{ "result" : "ok" }""")
   }

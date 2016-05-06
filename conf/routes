@@ -5,9 +5,9 @@
 # Home page
 GET     /                           controllers.Application.index
 
-POST     /vote                           controllers.DjController.vote
-POST     /play                           controllers.DjController.play
-GET     /songs                           controllers.DjController.songs
+POST    /vote/:id                       controllers.DjController.vote(id: Long)
+GET     /play                           controllers.DjController.play
+GET     /songs                          controllers.DjController.songs
 
 
 # Map static resources from the /public folder to the /assets URL path
